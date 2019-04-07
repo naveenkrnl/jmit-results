@@ -39,8 +39,8 @@ var/
 pip-log.txt
 pip-delete-this-directory.txt
 
-getdata.py
-onlinetest.csv
+# getdata.py
+# onlinetest.csv
 # Unit test / coverage reports
 htmlcov/
 .tox/
