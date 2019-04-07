@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block css %}<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+{% endblock css %}
+{% block content %}	
+<style>body {background-color:#eee;}
+    .container-fluid {padding:30px;}
+    .container{background-color:white;padding:50px;   }
+    #title{font-family: 'Lobster', cursive;;}
+    </style>
+	<div class="container-fluid">
+		<div class="container">
+			<h2 class="text-center" id="title">JMIT Online JEE Mock Test Result</h2>
+ 			<hr>
+			<div class="row">
+				<div class="col-md-5">
+                    <h2 class='mb-4' style="font-family: Cabin Sketch;
+                    font-weight: 400;">Student Details :</h2>
+                    <p style="margin: 0 0 8px 0;
+                    border-bottom: solid 2px #eee;"><strong>Name</strong></p>
+                    <p>{{ user.fullname}}</p>
+                    <p style="margin: 0 0 8px 0;
+                    border-bottom: solid 2px #eee;"><strong>12<sup>th</sup> Roll Number</strong></p>
+                    <p>{{ user.rollno}}</p>
+                    <p style="margin: 0 0 8px 0;
+                    border-bottom: solid 2px #eee;"><strong>Email Address</strong></p>
+                    <p>{{ user.email}}</p>                    <p style="margin: 0 0 8px 0;
+                    border-bottom: solid 2px #eee;"><strong>Phone Number</strong></p>
+                    <p>{{ user.phonenumber }}</p>                    <p style="margin: 0 0 8px 0;
+                    border-bottom: solid 2px #eee;"><strong>School Name</strong></p>
+                    <p>{{ user.schoolname}}</p> 
+				</div>
+				
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+				
+				<div class="col-md-5">
+                        <h2 class='mb-4' style="font-family: Cabin Sketch;
+                        font-weight: 400;">Result:</h2>  
+                    <p style="margin: 0 0 8px 0;
+                    border-bottom: solid 2px #eee;"><strong>Marks Obtained</strong></p>
+                    <p>{{ user.marks}}/60</p>                    
+                    <p style="margin: 0 0 8px 0;
+                    border-bottom: solid 2px #eee;"><strong>Percentage</strong></p>
+                    <p>{{ user.percentage}}</p> 
+                    {% if user.position is not 10 %} 
+                    <p style="margin: 0 0 8px 0;
+                    border-bottom: solid 2px #eee;"><strong>Position</strong></p>
+                    <p>{{ user.position}}</p>    
+                    {% endif %}              
+                </div>
+            </div>
+            <div class='text-center'>
+            <a href="{% url 'result:home' %}">Click here to check result of another student</a>
+            </div>
+		</div>
+	</div>
+ 
+{% endblock %}

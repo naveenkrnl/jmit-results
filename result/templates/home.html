@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css%}
+
+
+<style>
+  .errorlist{
+    color:red;
+  }
+  </style>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first mb-2">
+        <img src="{% static 'img/Logo.jpg' %}" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form method="POST">
+          {% csrf_token %}
+            <label>Enter your username, Email or 12th Roll Number</label>
+            {{ form.user.errors }}
+            {{ form.user }}
+            <label>Enter your Date of birth </label><br/>
+            {{ form.dob.errors }}<br/>
+            {{ form.dob }}<br/><br/>
+        <input type="submit" class="fadeIn fourth" value="Check Result">
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
