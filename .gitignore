@@ -2,7 +2,10 @@ bin/
 include/
 pip-selfcheck.json
 
-
+getdata.py
+onlinetest.csv
+Procfile
+runtime.txt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
